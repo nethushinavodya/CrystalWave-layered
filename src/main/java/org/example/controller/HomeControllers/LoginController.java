@@ -29,6 +29,7 @@ public class LoginController {
     @FXML private PasswordField passwordField;
 
     LoginBO loginBO = (LoginBO) BOFactory.getInstance().getBO(BOFactory.BOType.LOGIN);
+    @FXML
     private void handleLogin() throws SQLException, ClassNotFoundException {
         String email = emailField.getText().trim();
         String password = passwordField.getText().trim();
@@ -77,6 +78,7 @@ public class LoginController {
     }
     private boolean validateUserCredentials(String email, String password) throws SQLException, ClassNotFoundException {
         userDTO = loginBO.getUserByEmailAndRole(email);
+        System.out.println(userDTO.getPassword() + " " + userDTO.getPassword());
         if (userDTO != null && BCrypt.checkpw(password, userDTO.getPassword())) {
             return true;
         } else {
