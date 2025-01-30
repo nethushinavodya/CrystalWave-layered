@@ -7,125 +7,24 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="1000.0" prefWidth="1500.0" style="-fx-background-color: #000000; -fx-border-color: #FF007F;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.gdse.hotelmanagement.crystalwave.controller.ReceptionistControllers.ReceptionistDashboardController">
-   <ImageView fitHeight="865.0" fitWidth="1139.0" layoutX="324.0" layoutY="80.0">
-      <image>
-         <Image url="@../../../../../../layered/Crystlewave-layered/src/main/resources/Images/9904c98f469567301daf6e31d230d81a.jpg" />
-      </image>
-   </ImageView>
-    <AnchorPane fx:id="mainContentArea" layoutX="325.0" layoutY="80.0" prefHeight="865.0" prefWidth="1139.0" style="-fx-border-color: #FF007F; -fx-background-color: rgba(42, 46, 55, 0.7);" />
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #8ACFFF;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controller.ReceptionistControllers.ReceptionistDashboardController">
 
-    <!-- Sidebar -->
-    <VBox layoutY="81.0" prefHeight="865.0" prefWidth="325.0" style="-fx-background-color: #000000; -fx-border-color: #FF007F;">
-
-        <!-- Buttons with bottom border only -->
-        <Button onAction="#navigateToCheckIn" prefHeight="73.0" prefWidth="329.0" style="-fx-text-fill: FF007FFF; -fx-background-color: #000000; -fx-border-color: transparent transparent FF007FFF transparent; -fx-border-width: 0 0 3 0;" text="Check In                         " textAlignment="JUSTIFY" wrapText="true">
-            <font>
-                <Font name="Yrsa SemiBold Italic" size="27.0" />
-            </font>
-            <cursor>
-                <Cursor fx:constant="HAND" />
-            </cursor>
-            <effect>
-                <InnerShadow />
-            </effect>
-         <graphic>
-            <ImageView fitHeight="56.0" fitWidth="56.0">
-               <image>
-                  <Image url="@../../../../../../layered/Crystlewave-layered/src/main/resources/Images/schedule_7258712.png" />
-               </image>
-            </ImageView>
-         </graphic>
-        </Button>
-        <Button onAction="#navigateToCheckOut" prefHeight="73.0" prefWidth="334.0" style="-fx-text-fill: FF007FFF; -fx-background-color: #000000; -fx-border-color: transparent transparent FF007FFF transparent; -fx-border-width: 0 0 3 0;" text="Check Out                      " textAlignment="JUSTIFY" wrapText="true">
-            <font>
-                <Font name="Yrsa SemiBold Italic" size="27.0" />
-            </font>
-            <cursor>
-                <Cursor fx:constant="HAND" />
-            </cursor>
-            <effect>
-                <InnerShadow />
-            </effect>
-         <graphic>
-            <ImageView fitHeight="54.0" fitWidth="60.0">
-               <image>
-                  <Image url="@../../../../../../layered/Crystlewave-layered/src/main/resources/Images/checkout.png" />
-               </image>
-            </ImageView>
-         </graphic>
-        </Button>
-        <Button onAction="#navigateToGuestInfo" prefHeight="72.0" prefWidth="331.0" style="-fx-text-fill: FF007FFF; -fx-background-color: #000000; -fx-border-color: transparent transparent FF007FFF transparent; -fx-border-width: 0 0 3 0;" text="Check In Details         " textAlignment="JUSTIFY" wrapText="true">
-            <font>
-                <Font name="Yrsa SemiBold Italic" size="27.0" />
-            </font>
-            <cursor>
-                <Cursor fx:constant="HAND" />
-            </cursor>
-            <effect>
-                <InnerShadow />
-            </effect>
-         <graphic>
-            <ImageView fitHeight="57.0" fitWidth="53.0">
-               <image>
-                  <Image url="@../../../../../../layered/Crystlewave-layered/src/main/resources/Images/id-card_7258727.png" />
-               </image>
-            </ImageView>
-         </graphic>
-        </Button>
-        <Button onAction="#navigateToRoom" prefHeight="73.0" prefWidth="330.0" style="-fx-text-fill: FF007FFF; -fx-background-color: #000000; -fx-border-color: transparent transparent FF007FFF transparent; -fx-border-width: 0 0 3 0;" text="Rooms                           " textAlignment="JUSTIFY" wrapText="true">
-            <font>
-                <Font name="Yrsa SemiBold Italic" size="27.0" />
-            </font>
-            <cursor>
-                <Cursor fx:constant="HAND" />
-            </cursor>
-            <effect>
-                <InnerShadow />
-            </effect>
-         <graphic>
-            <ImageView fitHeight="58.0" fitWidth="65.0">
-               <image>
-                  <Image url="@../../../../../../layered/Crystlewave-layered/src/main/resources/Images/hotel1.png" />
-               </image>
-            </ImageView>
-         </graphic>
-        </Button>
-      <Button layoutX="11.0" layoutY="241.0" onAction="#navigateToService" prefHeight="73.0" prefWidth="330.0" style="-fx-text-fill: FF007FFF; -fx-background-color: #000000; -fx-border-color: transparent transparent FF007FFF transparent; -fx-border-width: 0 0 3 0;" text="Services                         " textAlignment="JUSTIFY" wrapText="true">
-         <font>
-            <Font name="Yrsa SemiBold Italic" size="27.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-         <effect>
-            <InnerShadow />
-         </effect>
-         <graphic>
-            <ImageView fitHeight="58.0" fitWidth="65.0">
-               <image>
-                  <Image url="@../../../../../../layered/Crystlewave-layered/src/main/resources/Images/hotel1.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
-    </VBox>
-
-    <!-- Footer -->
-    <HBox alignment="CENTER" layoutY="945.0" prefHeight="55.0" prefWidth="1500.0" style="-fx-background-color: #000000; -fx-border-color: #FF007F;">
-        <Label style="-fx-text-fill: FF007FFF;" text="CRYSTALWAVE HOTEL © 2024" />
-    </HBox>
-
-    <!-- Header -->
-    <VBox alignment="CENTER_RIGHT" prefHeight="70.0" prefWidth="1500.0" style="-fx-background-color: #000000; -fx-border-color: #FF007F;">
+    <!-- Main Content Area -->
+    <AnchorPane fx:id="mainContentArea" layoutX="280.0" layoutY="34.0" prefHeight="664.0" prefWidth="974.0" style="-fx-background-radius: 30; -fx-background-color: white;">
         <children>
-            <Button alignment="CENTER_RIGHT" onAction="#logout" prefHeight="70.0" prefWidth="263.0" style="-fx-text-fill: FF007FFF; -fx-background-color: #000000;" text="Logout        ">
+
+            <!-- Logout Button -->
+            <Button alignment="CENTER" layoutX="814.0" layoutY="17.0" onAction="#logout" prefHeight="38.0" prefWidth="133.0" style="-fx-background-color: #122E4B;" text="Logout" textFill="WHITE">
                 <font>
-                    <Font name="Yrsa SemiBold Italic" size="27.0" />
+                    <Font name="System Bold" size="20.0" />
                 </font>
                 <cursor>
                     <Cursor fx:constant="HAND" />
@@ -133,24 +32,245 @@
                 <effect>
                     <InnerShadow />
                 </effect>
-                <graphic>
-                    <ImageView fitHeight="60.0" fitWidth="66.0">
-                        <image>
-                            <Image url="@../../../../../../layered/Crystlewave-layered/src/main/resources/Images/logout_10008402.png" />
-                        </image>
-                    </ImageView>
-                </graphic>
             </Button>
-        </children>
-    </VBox>
-   <Label layoutX="87.0" prefHeight="75.0" prefWidth="323.0" text="Receptionist Page" textFill="#00c3ff">
-      <font>
-         <Font name="padmaa-Bold.1.1" size="34.0" />
-      </font>
-   </Label>
-   <ImageView fitHeight="67.0" fitWidth="72.0" layoutX="8.0" layoutY="9.0">
-      <image>
-         <Image url="@../../../../../../layered/Crystlewave-layered/src/main/resources/Images/cashier_17946124.png" />
-      </image>
-   </ImageView>
+            <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="771.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@../Images/logout.png" />
+                </image>
+            </ImageView>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c8d5e1" height="37.0" layoutX="173.0" layoutY="22.0" stroke="WHITE" strokeType="INSIDE" style="-fx-arc-height: 50; -fx-arc-width: 50;" width="557.0">
+                <cursor>
+                    <Cursor fx:constant="TEXT" />
+                </cursor>
+            </Rectangle>
+            <ImageView fitHeight="29.0" fitWidth="35.0" layoutX="682.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@../Images/loading.png" />
+                </image>
+            </ImageView>
+            <Label alignment="CENTER" layoutX="370.0" layoutY="25.0" prefHeight="35.0" prefWidth="162.0" text="dashboard">
+                <font>
+                    <Font size="23.0" />
+                </font>
+            </Label>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#dcdcdc" height="184.0" layoutX="220.0" layoutY="170.0" strokeType="INSIDE" strokeWidth="2.0" style="-fx-arc-height: 30; -fx-arc-width: 30;" width="632.0">
+                <stroke>
+                    <LinearGradient endX="1.0" endY="1.0">
+                        <stops>
+                            <Stop>
+                                <color>
+                                    <Color red="0.4123976528644562" green="0.45346978306770325" blue="0.9052631855010986" />
+                                </color>
+                            </Stop>
+                            <Stop offset="1.0">
+                                <color>
+                                    <Color red="0.13333334028720856" green="1.0" blue="0.20555555820465088" />
+                                </color>
+                            </Stop>
+                        </stops>
+                    </LinearGradient>
+                </stroke>
+            </Rectangle>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="134.0" layoutX="589.0" layoutY="196.0" stroke="BLACK" strokeType="INSIDE" style="-fx-arc-height: 39; -fx-arc-width: 39;" width="191.0">
+                <fill>
+                    <LinearGradient endX="1.0" endY="1.0">
+                        <stops>
+                            <Stop>
+                                <color>
+                                    <Color red="0.4468226134777069" green="0.7684210538864136" blue="0.5004223585128784" />
+                                </color>
+                            </Stop>
+                            <Stop offset="1.0">
+                                <color>
+                                    <Color red="1.0" green="1.0" blue="1.0" />
+                                </color>
+                            </Stop>
+                        </stops>
+                    </LinearGradient>
+                </fill>
+            </Rectangle>
+            <Label layoutX="612.0" layoutY="295.0" text="No of Guests">
+                <font>
+                    <Font name="System Bold Italic" size="20.0" />
+                </font>
+            </Label>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="134.0" layoutX="291.0" layoutY="195.0" stroke="BLACK" strokeType="INSIDE" style="-fx-arc-height: 39; -fx-arc-width: 39;" width="191.0">
+                <fill>
+                    <LinearGradient endX="1.0" endY="1.0">
+                        <stops>
+                            <Stop>
+                                <color>
+                                    <Color red="0.2685379981994629" green="0.4343547821044922" blue="0.5894736647605896" />
+                                </color>
+                            </Stop>
+                            <Stop offset="1.0">
+                                <color>
+                                    <Color red="1.0" green="1.0" blue="1.0" />
+                                </color>
+                            </Stop>
+                        </stops>
+                    </LinearGradient>
+                </fill>
+            </Rectangle>
+            <Label layoutX="313.0" layoutY="294.0" text="Rooms Available">
+                <font>
+                    <Font name="System Bold Italic" size="20.0" />
+                </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="348.0" layoutY="226.0" prefHeight="45.0" prefWidth="75.0" text="10">
+                <font>
+                    <Font name="System Bold Italic" size="29.0" />
+                </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="646.0" layoutY="227.0" prefHeight="45.0" prefWidth="75.0" text="30" textAlignment="RIGHT">
+                <font>
+                    <Font name="System Bold Italic" size="29.0" />
+                </font>
+            </Label>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="159.0" layoutX="111.0" layoutY="453.0" stroke="BLACK" strokeType="INSIDE" style="-fx-arc-height: 50; -fx-arc-width: 50;" width="542.0">
+                <fill>
+                    <LinearGradient endX="1.0" endY="1.0">
+                        <stops>
+                            <Stop>
+                                <color>
+                                    <Color red="0.40740740299224854" green="0.7135802507400513" blue="1.0" />
+                                </color>
+                            </Stop>
+                            <Stop offset="1.0">
+                                <color>
+                                    <Color red="0.8999999761581421" green="0.9516666531562805" blue="1.0" />
+                                </color>
+                            </Stop>
+                        </stops>
+                    </LinearGradient>
+                </fill>
+            </Rectangle>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="67.0" layoutX="157.0" layoutY="463.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" style="-fx-arc-height: 40; -fx-arc-width: 40;" width="339.0">
+                <fill>
+                    <LinearGradient endX="1.0" endY="1.0">
+                        <stops>
+                            <Stop>
+                                <color>
+                                    <Color red="0.4123976528644562" green="0.45346978306770325" blue="0.9052631855010986" />
+                                </color>
+                            </Stop>
+                            <Stop offset="1.0">
+                                <color>
+                                    <Color red="1.0" green="1.0" blue="1.0" />
+                                </color>
+                            </Stop>
+                        </stops>
+                    </LinearGradient>
+                </fill>
+            </Rectangle>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="67.0" layoutX="308.0" layoutY="536.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="3.0" style="-fx-arc-height: 40; -fx-arc-width: 40;" width="309.0">
+                <fill>
+                    <LinearGradient endX="1.0" endY="1.0">
+                        <stops>
+                            <Stop>
+                                <color>
+                                    <Color red="0.36666667461395264" green="1.0" blue="0.36666667461395264" />
+                                </color>
+                            </Stop>
+                            <Stop offset="1.0">
+                                <color>
+                                    <Color red="1.0" green="1.0" blue="1.0" />
+                                </color>
+                            </Stop>
+                        </stops>
+                    </LinearGradient>
+                </fill>
+            </Rectangle>
+            <Text layoutX="223.0" layoutY="502.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Upcomming Events :">
+                <font>
+                    <Font name="System Italic" size="25.0" />
+                </font>
+            </Text>
+            <Text fx:id="electionNameTxt" layoutX="358.0" layoutY="581.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* No Any Events" wrappingWidth="231.75">
+                <font>
+                    <Font name="System Bold Italic" size="23.0" />
+                </font>
+            </Text>
+        </children></AnchorPane>
+    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="731.0" layoutX="-3.0" layoutY="-1.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="3.0" style="-fx-arc-height: 30; -fx-arc-width: 30; -fx-fill: #122E4B;" width="254.0" />
+
+    <Button layoutX="49.0" layoutY="585.0" onAction="#navigateToService" prefHeight="75.0" prefWidth="190.0" style="-fx-background-color: #122E4B;" text="Services" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+        <font>
+            <Font name="System Bold" size="27.0" />
+        </font>
+        <cursor>
+            <Cursor fx:constant="HAND" />
+        </cursor>
+    </Button>
+
+    <!-- Navigation Buttons -->
+    <Button layoutX="68.0" layoutY="156.0" onAction="#navigateToCheckIn" prefHeight="75.0" prefWidth="165.0" style="-fx-background-color: #122E4B;" text="Check In" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+        <font>
+            <Font name="System Bold" size="27.0" />
+        </font>
+        <cursor>
+            <Cursor fx:constant="HAND" />
+        </cursor>
+    </Button>
+
+    <Button layoutX="75.0" layoutY="268.0" onAction="#navigateToCheckOut" prefHeight="75.0" prefWidth="170.0" style="-fx-background-color: #122E4B;" text="Check Out" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+        <font>
+            <Font name="System Bold" size="27.0" />
+        </font>
+        <cursor>
+            <Cursor fx:constant="HAND" />
+        </cursor>
+    </Button>
+
+    <Button layoutX="40.0" layoutY="369.0" onAction="#navigateToRoom" prefHeight="75.0" prefWidth="206.0" style="-fx-background-color: #122E4B;" text="Rooms" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+        <font>
+            <Font name="System Bold" size="27.0" />
+        </font>
+        <cursor>
+            <Cursor fx:constant="HAND" />
+        </cursor>
+    </Button>
+
+    <Button layoutX="-2.0" layoutY="466.0" onAction="#navigateToGuestInfo" prefHeight="106.0" prefWidth="250.0" style="-fx-background-color: #122E4B;" text="Check In Details" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+        <font>
+            <Font name="System Bold" size="27.0" />
+        </font>
+        <cursor>
+            <Cursor fx:constant="HAND" />
+        </cursor>
+    </Button>
+    <Text fill="WHITE" layoutX="106.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Receptionist">
+        <font>
+            <Font name="System Italic" size="19.0" />
+        </font>
+    </Text>
+    <ImageView fitHeight="38.0" fitWidth="52.0" layoutX="51.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+        <image>
+            <Image url="@../Images/user.png" />
+        </image>
+        <cursor>
+            <Cursor fx:constant="HAND" />
+        </cursor>
+    </ImageView>
+    <Line endX="128.46665954589844" layoutX="116.0" layoutY="116.0" startX="-110.00001525878906" strokeWidth="3.0" />
+    <ImageView fitHeight="67.0" fitWidth="67.0" layoutX="19.0" layoutY="159.0">
+        <image>
+            <Image url="@../Images/check-in.png" />
+        </image>
+    </ImageView>
+    <ImageView fitHeight="67.0" fitWidth="67.0" layoutX="19.0" layoutY="270.0" pickOnBounds="true" preserveRatio="true">
+        <image>
+            <Image url="@../Images/check-out.png" />
+        </image>
+    </ImageView>
+    <ImageView fitHeight="73.0" fitWidth="67.0" layoutX="21.0" layoutY="365.0">
+        <image>
+            <Image url="@../Images/hotel.png" />
+        </image>
+    </ImageView>
+    <ImageView fitHeight="67.0" fitWidth="67.0" layoutX="17.0" layoutY="582.0">
+        <image>
+            <Image url="@../Images/service.png" />
+        </image>
+    </ImageView>
 </AnchorPane>

@@ -5,37 +5,56 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="868.0" prefWidth="1139.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.gdse.hotelmanagement.crystalwave.controller.ReceptionistControllers.CheckOutController">
-    <!-- Topic Label -->
-    <VBox alignment="CENTER" prefHeight="60.0" prefWidth="1139.0" style="-fx-background-color: #1a1a1a;">
-        <Label alignment="CENTER" style="-fx-text-fill: #FF007F; -fx-font-size: 24px; -fx-font-weight: bold;" text="Checkout">
-            <font>
-                <Font name="System Bold" size="18.0" />
-            </font>
-        </Label>
-    </VBox>
-     <!-- Room Number -->
-     <Label layoutX="47.0" layoutY="84.0" prefHeight="30.0" prefWidth="155.0" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #00b7ff;" text="Room Id :">
-         <font>
-             <Font size="14.0" />
-         </font>
-     </Label>
+<AnchorPane prefHeight="664.0" prefWidth="974.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.gdse.hotelmanagement.crystalwave.controller.ReceptionistControllers.CheckOutController">
+    <Pane layoutX="17.0" layoutY="56.0" prefHeight="594.0" prefWidth="940.0" style="-fx-background-color: rgba(42, 46, 55, 0.9); -fx-background-radius: 30;" />
+    <!-- Room Number -->
+    <Label layoutX="47.0" layoutY="84.0" prefHeight="30.0" prefWidth="155.0" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #00b7ff;" text="Room Id :">
+        <font>
+            <Font size="14.0" />
+        </font>
+    </Label>
 
-     <!-- Buttons -->
-     <Button fx:id="checkoutButton" layoutX="489.0" layoutY="79.0" onAction="#handleCheckout" prefHeight="40.0" prefWidth="155.0" style="-fx-border-color: #FF007F; -fx-border-radius: 20; -fx-border-width: 3; -fx-background-color: #333333; -fx-background-radius: 20; -fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #ffffff;" text="Checkout">
-         <cursor>
-             <Cursor fx:constant="HAND" />
-         </cursor>
-     </Button>
-     <Button fx:id="generateBillButton" layoutX="47.0" layoutY="143.0" onAction="#handleGenerateBill" prefHeight="40.0" prefWidth="155.0" style="-fx-border-color: #FF007F; -fx-border-radius: 20; -fx-border-width: 3; -fx-background-color: #333333; -fx-background-radius: 20; -fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #ffffff;" text="Generate Bill">
-         <cursor>
-             <Cursor fx:constant="HAND" />
-         </cursor>
-     </Button>
-   <ComboBox fx:id="roomIdCmb" layoutX="195.0" layoutY="87.0" onAction="#roomIDCmb" prefHeight="30.0" prefWidth="265.0" promptText="Select Room Id" style="-fx-border-color: #00b7ff; -fx-border-width: 2; -fx-background-radius: 10; -fx-border-radius: 10;" />
-   <TextField fx:id="reservation_id" layoutX="677.0" layoutY="87.0" prefHeight="30.0" prefWidth="247.0" promptText="Reservation_Id" />
+    <!-- Buttons -->
+    <Button fx:id="checkoutButton" layoutX="489.0" layoutY="79.0" onAction="#handleCheckout" prefHeight="40.0" prefWidth="155.0" style="-fx-border-color: #FF0000; -fx-border-radius: 20; -fx-border-width: 3; -fx-background-color: #333333; -fx-background-radius: 20; -fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #ffffff;" text="Checkout">
+        <cursor>
+            <Cursor fx:constant="HAND" />
+        </cursor>
+    </Button>
+    <Button fx:id="generateBillButton" layoutX="47.0" layoutY="143.0" onAction="#handleGenerateBill" prefHeight="40.0" prefWidth="155.0" style="-fx-border-color: #57D95C; -fx-border-radius: 20; -fx-border-width: 3; -fx-background-color: #333333; -fx-background-radius: 20; -fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #ffffff;" text="Generate Bill">
+        <cursor>
+            <Cursor fx:constant="HAND" />
+        </cursor>
+    </Button>
+    <ComboBox fx:id="roomIdCmb" layoutX="195.0" layoutY="87.0" onAction="#roomIDCmb" prefHeight="30.0" prefWidth="265.0" promptText="Select Room Id" style="-fx-border-color: #00b7ff; -fx-border-width: 2; -fx-background-radius: 10; -fx-border-radius: 10;" />
+    <TextField fx:id="reservation_id" layoutX="677.0" layoutY="87.0" prefHeight="30.0" prefWidth="247.0" promptText="Reservation_Id" style="-fx-border-color: #00b7ff; -fx-border-width: 2; -fx-background-radius: 10; -fx-border-radius: 10;" />
+    <Button layoutX="867.0" layoutY="16.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="74.0" style="-fx-background-color: #122E4B; -fx-background-radius: 10;" text="Back" textFill="WHITE">
+        <font>
+            <Font name="System Bold" size="12.0" />
+        </font>
+        <cursor>
+            <Cursor fx:constant="HAND" />
+        </cursor>
+    </Button>
+    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c8d5e1" height="37.0" layoutX="213.0" layoutY="11.0" stroke="WHITE" strokeType="INSIDE" style="-fx-arc-height: 50; -fx-arc-width: 50;" width="557.0">
+        <cursor>
+            <Cursor fx:constant="TEXT" />
+        </cursor>
+    </Rectangle>
+    <ImageView fitHeight="29.0" fitWidth="35.0" layoutX="722.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+        <image>
+            <Image url="@../Images/refresh.png" />
+        </image>
+    </ImageView>
+    <Label layoutX="428.0" layoutY="15.0" prefHeight="30.0" prefWidth="198.0" text="Check Out Dashboard">
+        <font>
+            <Font name="System Bold" size="18.0" />
+        </font>
+    </Label>
 </AnchorPane>
