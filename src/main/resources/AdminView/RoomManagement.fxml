@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="roomContent" prefHeight="664.0" prefWidth="974.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controller.AdminControllers.RoomManagementController">
+    <Pane layoutX="15.0" layoutY="52.0" prefHeight="590.0" prefWidth="942.0" style="-fx-background-color: rgba(42, 46, 55, 0.8); -fx-background-radius: 30;">
+        <children>
+
+            <!-- Room List Table -->
+            <TableView fx:id="roomTable" layoutX="64.0" layoutY="52.0" onMouseClicked="#roomTable" prefHeight="248.0" prefWidth="811.0" style="-fx-border-color: #00b7ff; -fx-border-width: 2;">
+                <columns>
+                    <TableColumn fx:id="roomNumberColumn" prefWidth="160.0" text="Room Type Id" />
+                    <TableColumn fx:id="roomTypeColumn" prefWidth="147.20008850097656" text="Room Type" />
+                    <TableColumn fx:id="coldesc" prefWidth="286.39990234375" text="Room Description" />
+                    <TableColumn fx:id="roomPriceColumn" prefWidth="208.800048828125" text="Price" />
+                </columns>
+            </TableView>
+
+            <!-- Room Type Management -->
+            <AnchorPane layoutX="17.0" layoutY="322.0" prefHeight="159.0" prefWidth="919.0" style="-fx-border-width: 1;">
+                <Label layoutX="6.0" layoutY="-1.0" prefHeight="36.0" prefWidth="213.0" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: white;" text="Add Room Type" textFill="WHITE" />
+
+                <Label layoutX="15.0" layoutY="103.0" prefHeight="36.0" prefWidth="142.0" style="-fx-text-fill: #00B7FF; -fx-font-weight: bold; -fx-font-size: 16px;" text="Room Type:" />
+                <TextField fx:id="addRoomTypeField" layoutX="131.0" layoutY="101.0" onKeyReleased="#roomTypeOnKeyRelease" prefHeight="36.0" prefWidth="213.0" promptText="Enter Room Type" style="-fx-background-radius: 10; -fx-border-color: #00b7ff; -fx-border-radius: 10; -fx-border-width: 2; -fx-background-color: #2A2E37; -fx-text-fill:#ffffff " />
+
+                <Label layoutX="367.0" layoutY="47.0" prefHeight="30.0" prefWidth="120.0" style="-fx-text-fill: #00B7FF; -fx-font-weight: bold; -fx-font-size: 16px;" text="Description:" />
+                <TextField fx:id="addRoomTypeDescField" layoutX="464.0" layoutY="46.0" onKeyReleased="#DescriptionOnKeyRelease" prefHeight="36.0" prefWidth="262.0" promptText="Description" style="-fx-border-color: #00b7ff; -fx-border-radius: 10; -fx-border-width: 2; -fx-background-radius: 10; -fx-background-color: #2A2E37;-fx-text-fill:#ffffff" />
+
+                <Label layoutX="411.0" layoutY="102.0" prefHeight="30.0" prefWidth="56.0" style="-fx-text-fill: #00B7FF; -fx-font-weight: bold; -fx-font-size: 16px;" text="Price :" />
+                <TextField fx:id="addRoomTypeRateField" layoutX="463.0" layoutY="103.0" onKeyReleased="#priceOnKeyRelease" prefHeight="36.0" prefWidth="262.0" promptText="Price" style="-fx-border-color: #00b7ff; -fx-border-radius: 10; -fx-border-width: 2; -fx-background-radius: 10; -fx-background-color: #2A2E37;-fx-text-fill:#ffffff" />
+
+                <Button layoutX="758.0" layoutY="45.0" onAction="#handleAddRoomType" prefHeight="36.0" prefWidth="157.0" style="-fx-border-color: #57D95C; -fx-border-radius: 20; -fx-border-width: 3; -fx-background-color: #333333; -fx-background-radius: 20; -fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #ffffff;" text="Save">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+
+                <Label layoutX="15.0" layoutY="50.0" prefHeight="30.0" prefWidth="142.0" style="-fx-text-fill: #00B7FF; -fx-font-weight: bold; -fx-font-size: 16px;" text="Room Type Id :" />
+                <TextField fx:id="addRoomNumberField" layoutX="132.0" layoutY="47.0" prefHeight="36.0" prefWidth="213.0" promptText="Enter Room Id" style="-fx-border-color: #00b7ff; -fx-border-radius: 10; -fx-border-width: 2; -fx-background-radius: 10; -fx-background-color: #2A2E37;-fx-text-fill:#ffffff" />
+                <Button layoutX="757.0" layoutY="100.0" mnemonicParsing="false" onAction="#handleUpdate" prefHeight="36.0" prefWidth="157.0" style="-fx-border-color: #1f4fc9; -fx-border-radius: 20; -fx-border-width: 3; -fx-background-color: #333333; -fx-background-radius: 20; -fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #ffffff;" text="Update" textFill="WHITE">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+            </AnchorPane>
+        </children>
+    </Pane>
+
+    <!-- Remove Room Section -->
+    <AnchorPane layoutX="45.0" layoutY="529.0" prefHeight="118.0" prefWidth="907.0">
+        <Label layoutX="6.0" layoutY="-1.0" prefHeight="42.0" prefWidth="195.0" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: white;" text="Remove Room" />
+
+        <Label layoutX="14.0" layoutY="44.0" prefHeight="36.0" prefWidth="302.0" style="-fx-text-fill: #00B7FF; -fx-font-weight: bold; -fx-font-size: 16px;" text="Enter Room Id to Remove:" />
+        <TextField fx:id="removeRoomNumberField" layoutX="224.0" layoutY="44.0" onKeyPressed="#removeOnKeyRelease" prefHeight="36.0" prefWidth="229.0" promptText="Enter Room Id" style="-fx-border-color: #00b7ff; -fx-border-radius: 10; -fx-background-radius: 10; -fx-border-width: 2; -fx-background-color: #2A2E37;-fx-text-fill:#ffffff" />
+
+        <Button layoutX="467.0" layoutY="41.0" onAction="#handleRemoveRoom" style="-fx-border-color: #122E4B; -fx-border-radius: 20; -fx-border-width: 3; -fx-background-color: #333333; -fx-background-radius: 20; -fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #ffffff;" text="Remove Room">
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Button>
+
+        <Button layoutX="705.0" layoutY="41.0" mnemonicParsing="false" onAction="#handleRoom" prefHeight="36.0" prefWidth="157.0" style="-fx-background-color: #57D95C; -fx-border-radius: 20; -fx-border-width: 3; -fx-border-color: #333333; -fx-background-radius: 20; -fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #ffffff;" text="Add Room">
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+            <effect>
+                <InnerShadow>
+                    <color>
+                        <Color red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" />
+                    </color>
+                </InnerShadow>
+            </effect>
+        </Button>
+    </AnchorPane>
+    <Button layoutX="884.0" layoutY="11.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="74.0" style="-fx-background-color: #122E4B; -fx-background-radius: 10;" text="Back" textFill="WHITE">
+        <font>
+            <Font name="System Bold" size="12.0" />
+        </font>
+        <cursor>
+            <Cursor fx:constant="HAND" />
+        </cursor>
+    </Button>
+    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c8d5e1" height="37.0" layoutX="230.0" layoutY="6.0" stroke="WHITE" strokeType="INSIDE" style="-fx-arc-height: 50; -fx-arc-width: 50;" width="557.0">
+        <cursor>
+            <Cursor fx:constant="TEXT" />
+        </cursor>
+    </Rectangle>
+    <ImageView fitHeight="29.0" fitWidth="35.0" layoutX="739.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+        <image>
+            <Image url="@../Images/refresh.png" />
+        </image>
+    </ImageView>
+    <Label layoutX="445.0" layoutY="10.0" prefHeight="30.0" prefWidth="158.0" text="RoomType Dashboard">
+        <font>
+            <Font name="System Bold" size="14.0" />
+        </font>
+    </Label>
+
+</AnchorPane>

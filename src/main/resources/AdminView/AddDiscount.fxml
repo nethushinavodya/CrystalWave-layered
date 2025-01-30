@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="664.0" prefWidth="974.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controller.AdminControllers.DiscountController">
+    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#686b6e" height="589.0" layoutX="13.0" layoutY="64.0" stroke="BLACK" strokeType="INSIDE" style="-fx-arc-height: 50; -fx-arc-width: 50;" width="950.0" />
+
+    <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="10.0" layoutY="91.0" prefHeight="38.0" prefWidth="142.0" style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Discount Id :" textFill="#00b7ff" />
+    <Label layoutX="36.0" layoutY="147.0" prefHeight="38.0" prefWidth="142.0" style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Discount Type :" textFill="#00b7ff" />
+    <Label alignment="CENTER_RIGHT" layoutX="-11.0" layoutY="205.0" prefHeight="38.0" prefWidth="171.0" style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Discount Amount :" textFill="#00b7ff" />
+    <Label alignment="CENTER_RIGHT" layoutX="469.0" layoutY="87.0" prefHeight="38.0" prefWidth="142.0" style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Start Date :" textFill="#00b7ff" />
+    <TextField fx:id="disId" layoutX="170.0" layoutY="89.0" onKeyReleased="#disIdOnKeyRelease" prefHeight="38.0" prefWidth="339.0" promptText="Enter Discount Id" style="-fx-background-radius: 10; -fx-padding: 10; -fx-border-color: #00b7ff; -fx-border-radius: 10; -fx-border-width: 2; -fx-background-color: #333333; -fx-text-fill:#ffffff" />
+    <TextField fx:id="disType" layoutX="171.0" layoutY="147.0" onKeyReleased="#discountTypeOnKeyRelseased" prefHeight="38.0" prefWidth="333.0" promptText="Enter Discount Type" style="-fx-border-color: #00b7ff; -fx-border-radius: 10; -fx-border-width: 2; -fx-background-radius: 10; -fx-background-color: #333333;-fx-text-fill: #ffffff" />
+    <TextField fx:id="disCon" layoutX="172.0" layoutY="204.0" onKeyReleased="#ConditionOnKeyRelease" prefHeight="38.0" prefWidth="333.0" promptText="Amount " style="-fx-border-color: #00b7ff; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-width: 2; -fx-background-color: #333333;-fx-text-fill: #ffffff" />
+    <Label alignment="CENTER_RIGHT" layoutX="469.0" layoutY="147.0" prefHeight="38.0" prefWidth="142.0" style="-fx-font-size: 16px; -fx-font-weight: bold;" text="End Date :" textFill="#00b7ff" />
+
+    <DatePicker fx:id="startDate" layoutX="625.0" layoutY="87.0" prefHeight="38.0" prefWidth="296.0" promptText="Start Date" style="-fx-border-color: #00b7ff; -fx-border-radius: 10; -fx-border-width: 2; -fx-background-radius: 10;" />
+    <DatePicker fx:id="endDate" layoutX="625.0" layoutY="147.0" prefHeight="38.0" prefWidth="298.0" promptText="End Date" style="-fx-border-color: #00b7ff; -fx-border-radius: 10; -fx-border-width: 2; -fx-background-radius: 10;" />
+
+    <Button layoutX="524.0" layoutY="589.0" mnemonicParsing="false" onAction="#handleSave" prefHeight="40.0" prefWidth="171.0" style="-fx-border-color: #00ff48; -fx-border-radius: 20; -fx-border-width: 3; -fx-background-color: #333333; -fx-background-radius: 20; -fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #ffffff;" text="Save" textFill="WHITE">
+        <cursor>
+            <Cursor fx:constant="HAND" />
+        </cursor>
+    </Button>
+
+    <Button layoutX="737.0" layoutY="589.0" mnemonicParsing="false" onAction="#handleDelete" prefHeight="40.0" prefWidth="171.0" style="-fx-background-color: #333333; -fx-text-fill: white; -fx-background-radius: 20; -fx-font-size: 16px; -fx-font-weight: bold; -fx-border-color: #FF0000; -fx-border-radius: 20; -fx-border-width: 3;" text="Delete">
+        <cursor>
+            <Cursor fx:constant="HAND" />
+        </cursor>
+    </Button>
+
+    <TableView fx:id="tableView" layoutX="79.0" layoutY="294.0" onMouseClicked="#tableView" prefHeight="266.0" prefWidth="816.0" style="-fx-border-color: #00b7ff; -fx-border-width: 2;">
+        <columns>
+            <TableColumn fx:id="discountId" prefWidth="139.99993896484375" style="-fx-text-fill: #000000;" text="Discount Id" />
+            <TableColumn fx:id="discountType" prefWidth="123.19996643066406" style="-fx-text-fill: #000000;" text="Discount Type" />
+            <TableColumn fx:id="condition" prefWidth="160.0" style="-fx-text-fill: #000000;" text="Discount Amount" />
+            <TableColumn fx:id="sDate" prefWidth="212.0" style="-fx-text-fill: #000000;" text="Start Date" />
+            <TableColumn fx:id="eDate" prefWidth="182.39996337890625" style="-fx-text-fill: #000000;" text="End Date" />
+        </columns>
+    </TableView>
+    <Button layoutX="859.0" layoutY="21.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="74.0" style="-fx-background-color: #122E4B; -fx-background-radius: 10;" text="Back" textFill="WHITE">
+        <font>
+            <Font name="System Bold" size="12.0" />
+        </font>
+        <cursor>
+            <Cursor fx:constant="HAND" />
+        </cursor>
+    </Button>
+    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c8d5e1" height="37.0" layoutX="240.0" layoutY="16.0" stroke="WHITE" strokeType="INSIDE" style="-fx-arc-height: 50; -fx-arc-width: 50;" width="557.0">
+        <cursor>
+            <Cursor fx:constant="TEXT" />
+        </cursor>
+    </Rectangle>
+    <ImageView fitHeight="29.0" fitWidth="35.0" layoutX="749.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+        <image>
+            <Image url="@../Images/refresh.png" />
+        </image>
+    </ImageView>
+    <Label layoutX="455.0" layoutY="20.0" prefHeight="30.0" prefWidth="179.0" text="Discount Dashboard">
+        <font>
+            <Font name="System Bold" size="18.0" />
+        </font>
+    </Label>
+
+</AnchorPane>

@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #8ACFFF;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controller.AdminControllers.AdminDashboardController">
+    <AnchorPane fx:id="mainContentArea" layoutX="279.0" layoutY="27.0" prefHeight="664.0" prefWidth="974.0" style="-fx-background-color: #ffffff; -fx-background-radius: 30;">
+        <children>
+            <Button alignment="CENTER" layoutX="826.0" layoutY="16.0" onAction="#logout" prefHeight="35.0" prefWidth="136.0" style="-fx-background-color: #122E4B; -fx-font-weight: bold;" text="Logout" textFill="WHITE">
+                <font>
+                    <Font size="20.0" />
+                </font>
+                <cursor>
+                    <Cursor fx:constant="HAND" />
+                </cursor>
+                <effect>
+                    <InnerShadow />
+                </effect>
+            </Button>
+            <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="784.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@../Images/logout.png" />
+                </image>
+            </ImageView>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c8d5e1" height="37.0" layoutX="186.0" layoutY="20.0" stroke="WHITE" strokeType="INSIDE" style="-fx-arc-height: 50; -fx-arc-width: 50;" width="557.0">
+                <cursor>
+                    <Cursor fx:constant="TEXT" />
+                </cursor>
+            </Rectangle>
+            <ImageView fitHeight="29.0" fitWidth="35.0" layoutX="695.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@../Images/loading.png" />
+                </image>
+            </ImageView>
+            <Label alignment="CENTER" layoutX="383.0" layoutY="23.0" prefHeight="35.0" prefWidth="162.0" text="dashboard">
+                <font>
+                    <Font size="23.0" />
+                </font>
+            </Label>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="159.0" layoutX="130.0" layoutY="444.0" stroke="BLACK" strokeType="INSIDE" style="-fx-arc-height: 50; -fx-arc-width: 50;" width="542.0">
+                <fill>
+                    <LinearGradient endX="1.0" endY="1.0">
+                        <stops>
+                            <Stop>
+                                <color>
+                                    <Color red="0.40740740299224854" green="0.7135802507400513" blue="1.0" />
+                                </color>
+                            </Stop>
+                            <Stop offset="1.0">
+                                <color>
+                                    <Color red="0.8999999761581421" green="0.9516666531562805" blue="1.0" />
+                                </color>
+                            </Stop>
+                        </stops>
+                    </LinearGradient>
+                </fill>
+            </Rectangle>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#dcdcdc" height="184.0" layoutX="207.0" layoutY="158.0" strokeType="INSIDE" strokeWidth="2.0" style="-fx-arc-height: 30; -fx-arc-width: 30;" width="632.0">
+                <stroke>
+                    <LinearGradient endX="1.0" endY="1.0">
+                        <stops>
+                            <Stop>
+                                <color>
+                                    <Color red="0.4123976528644562" green="0.45346978306770325" blue="0.9052631855010986" />
+                                </color>
+                            </Stop>
+                            <Stop offset="1.0">
+                                <color>
+                                    <Color red="0.13333334028720856" green="1.0" blue="0.20555555820465088" />
+                                </color>
+                            </Stop>
+                        </stops>
+                    </LinearGradient>
+                </stroke>
+            </Rectangle>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="134.0" layoutX="576.0" layoutY="184.0" stroke="BLACK" strokeType="INSIDE" style="-fx-arc-height: 39; -fx-arc-width: 39;" width="191.0">
+                <fill>
+                    <LinearGradient endX="1.0" endY="1.0">
+                        <stops>
+                            <Stop>
+                                <color>
+                                    <Color red="0.4468226134777069" green="0.7684210538864136" blue="0.5004223585128784" />
+                                </color>
+                            </Stop>
+                            <Stop offset="1.0">
+                                <color>
+                                    <Color red="1.0" green="1.0" blue="1.0" />
+                                </color>
+                            </Stop>
+                        </stops>
+                    </LinearGradient>
+                </fill>
+            </Rectangle>
+            <Label layoutX="599.0" layoutY="283.0" text="No of Employees">
+                <font>
+                    <Font name="System Bold Italic" size="20.0" />
+                </font>
+            </Label>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="134.0" layoutX="278.0" layoutY="183.0" stroke="BLACK" strokeType="INSIDE" style="-fx-arc-height: 39; -fx-arc-width: 39;" width="191.0">
+                <fill>
+                    <LinearGradient endX="1.0" endY="1.0">
+                        <stops>
+                            <Stop>
+                                <color>
+                                    <Color red="0.2685379981994629" green="0.4343547821044922" blue="0.5894736647605896" />
+                                </color>
+                            </Stop>
+                            <Stop offset="1.0">
+                                <color>
+                                    <Color red="1.0" green="1.0" blue="1.0" />
+                                </color>
+                            </Stop>
+                        </stops>
+                    </LinearGradient>
+                </fill>
+            </Rectangle>
+            <Label layoutX="317.0" layoutY="282.0" text="No of Rooms">
+                <font>
+                    <Font name="System Bold Italic" size="20.0" />
+                </font>
+            </Label>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="67.0" layoutX="178.0" layoutY="458.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" style="-fx-arc-height: 40; -fx-arc-width: 40;" width="339.0">
+                <fill>
+                    <LinearGradient endX="1.0" endY="1.0">
+                        <stops>
+                            <Stop>
+                                <color>
+                                    <Color red="0.4123976528644562" green="0.45346978306770325" blue="0.9052631855010986" />
+                                </color>
+                            </Stop>
+                            <Stop offset="1.0">
+                                <color>
+                                    <Color red="1.0" green="1.0" blue="1.0" />
+                                </color>
+                            </Stop>
+                        </stops>
+                    </LinearGradient>
+                </fill>
+            </Rectangle>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="67.0" layoutX="299.0" layoutY="516.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="3.0" style="-fx-arc-height: 40; -fx-arc-width: 40;" width="309.0">
+                <fill>
+                    <LinearGradient endX="1.0" endY="1.0">
+                        <stops>
+                            <Stop>
+                                <color>
+                                    <Color red="0.36666667461395264" green="1.0" blue="0.36666667461395264" />
+                                </color>
+                            </Stop>
+                            <Stop offset="1.0">
+                                <color>
+                                    <Color red="1.0" green="1.0" blue="1.0" />
+                                </color>
+                            </Stop>
+                        </stops>
+                    </LinearGradient>
+                </fill>
+            </Rectangle>
+            <Text layoutX="222.0" layoutY="498.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Upcomming Events :">
+                <font>
+                    <Font name="System Italic" size="25.0" />
+                </font>
+            </Text>
+            <Text fx:id="electionNameTxt" layoutX="352.0" layoutY="559.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* No Any Events" wrappingWidth="231.75">
+                <font>
+                    <Font name="System Bold Italic" size="23.0" />
+                </font>
+            </Text>
+            <Label alignment="CENTER" layoutX="335.0" layoutY="214.0" prefHeight="45.0" prefWidth="75.0" text="20">
+                <font>
+                    <Font name="System Bold Italic" size="29.0" />
+                </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="633.0" layoutY="215.0" prefHeight="45.0" prefWidth="75.0" text="10" textAlignment="RIGHT">
+                <font>
+                    <Font name="System Bold Italic" size="29.0" />
+                </font>
+            </Label>
+        </children></AnchorPane>
+    <ButtonBar layoutX="0.800000011920929" layoutY="436.20001220703125" />
+    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="720.0" layoutX="-2.0" layoutY="-2.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="3.0" style="-fx-arc-height: 30; -fx-arc-width: 30; -fx-fill: #122E4B;" width="254.0" />
+
+    <!-- Buttons with bottom border only -->
+    <Button layoutX="39.0" layoutY="155.0" onAction="#navigateToRoomManagement" prefHeight="67.0" prefWidth="197.0" style="-fx-background-color: #122E4B;" text="Room" textAlignment="JUSTIFY" textFill="WHITE" wrapText="true">
+        <font>
+            <Font name="System Bold" size="24.0" />
+        </font>
+        <cursor>
+            <Cursor fx:constant="HAND" />
+        </cursor>
+    </Button>
+    <Button layoutX="64.0" layoutY="249.0" onAction="#navigateToEmployeeManagement" prefHeight="68.0" prefWidth="181.0" style="-fx-background-color: #122E4B;" text="Employee" textAlignment="JUSTIFY" textFill="WHITE" wrapText="true">
+        <font>
+            <Font name="System Bold" size="24.0" />
+        </font>
+        <cursor>
+            <Cursor fx:constant="HAND" />
+        </cursor>
+    </Button>
+    <Button layoutX="55.0" layoutY="346.0" onAction="#navigateToInventory" prefHeight="64.0" prefWidth="190.0" style="-fx-background-color: #122E4B;" text=" Inventory" textAlignment="JUSTIFY" textFill="WHITE" wrapText="true">
+        <font>
+            <Font name="System Bold" size="24.0" />
+        </font>
+        <cursor>
+            <Cursor fx:constant="HAND" />
+        </cursor>
+    </Button>
+    <Button layoutX="75.0" layoutY="561.0" onAction="#navigateToReports" prefHeight="63.0" prefWidth="155.0" style="-fx-background-color: #122E4B; -fx-border-width: 0 0 3 0;" text="Reports " textAlignment="JUSTIFY" textFill="WHITE" wrapText="true">
+        <font>
+            <Font name="System Bold" size="24.0" />
+        </font>
+        <cursor>
+            <Cursor fx:constant="HAND" />
+        </cursor>
+    </Button>
+    <Button layoutX="61.0" layoutY="450.0" onAction="#navigateToDiscounts" prefHeight="70.0" prefWidth="183.0" style="-fx-background-color: #122E4B;" text="Discounts" textAlignment="JUSTIFY" textFill="WHITE" wrapText="true">
+        <font>
+            <Font name="System Bold" size="24.0" />
+        </font>
+        <cursor>
+            <Cursor fx:constant="HAND" />
+        </cursor>
+    </Button>
+    <Text fill="WHITE" layoutX="96.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin">
+        <font>
+            <Font name="System Italic" size="19.0" />
+        </font>
+    </Text>
+    <ImageView fitHeight="38.0" fitWidth="52.0" layoutX="41.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
+        <image>
+            <Image url="@../Images/user.png" />
+        </image>
+        <cursor>
+            <Cursor fx:constant="HAND" />
+        </cursor>
+    </ImageView>
+    <Line endX="128.46665954589844" layoutX="125.0" layoutY="106.0" startX="-110.00001525878906" strokeWidth="3.0" />
+    <ImageView fitHeight="47.0" fitWidth="57.0" layoutX="21.0" layoutY="163.0">
+        <image>
+            <Image url="@../Images/home%20(2).png" />
+        </image>
+    </ImageView>
+    <ImageView fitHeight="80.0" fitWidth="47.0" layoutX="25.0" layoutY="262.0" pickOnBounds="true" preserveRatio="true">
+        <image>
+            <Image url="@../Images/voters%20(1).png" />
+        </image>
+    </ImageView>
+    <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="26.0" layoutY="343.0">
+        <image>
+            <Image url="@../Images/inventory.png" />
+        </image>
+    </ImageView>
+    <ImageView fitHeight="60.0" fitWidth="63.0" layoutX="19.0" layoutY="561.0">
+        <image>
+            <Image url="@../Images/report.png" />
+        </image>
+    </ImageView>
+    <ImageView fitHeight="53.0" fitWidth="55.0" layoutX="23.0" layoutY="458.0">
+        <image>
+            <Image url="@../Images/discount.png" />
+        </image>
+    </ImageView>
+</AnchorPane>
