@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 public class Discount {
         private String discountId;
         private String discountType;
-        private int discountCondition;
         private String discountStartDate;
         private String discountEndDate;
+        private int discountCondition;
 }

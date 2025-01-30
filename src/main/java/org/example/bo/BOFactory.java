@@ -1,9 +1,7 @@
 package org.example.bo;
 
 
-import org.example.bo.custom.impl.LoginBOImpl;
-import org.example.bo.custom.impl.RoomBOImpl;
-import org.example.bo.custom.impl.RoomTypeBOImpl;
+import org.example.bo.custom.impl.*;
 
 public class BOFactory {
     private static BOFactory boFactory;
@@ -12,7 +10,7 @@ public class BOFactory {
         return boFactory==null?boFactory=new BOFactory():boFactory;
     }
     public enum BOType {
-        ROOMTYPE,LOGIN,ROOM
+        ROOMTYPE,LOGIN, INVENTORY, EMPLOYEE, DISCOUNT, ROOM
     }
     public SuperBO getBO(BOType type) {
         switch (type) {
@@ -22,6 +20,12 @@ public class BOFactory {
                 return new RoomTypeBOImpl();
             case ROOM:
                 return new RoomBOImpl();
+            case INVENTORY:
+                return new InventoryBOImpl();
+            case EMPLOYEE:
+                return new EmployeeBOImpl();
+            case DISCOUNT:
+                return new DiscountBOImpl();
             default:
                 return null;
         }
