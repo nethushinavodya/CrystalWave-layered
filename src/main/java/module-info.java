@@ -5,6 +5,7 @@ module Crystalwave.layered {
     requires javafx.graphics;
     requires jbcrypt;
     requires static lombok;
+    requires net.sf.jasperreports.core;
 
     exports org.example;
     exports org.example.bo;

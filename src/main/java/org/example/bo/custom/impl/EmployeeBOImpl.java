@@ -4,8 +4,11 @@ import org.example.bo.custom.EmployeeBO;
 import org.example.dao.DAOFactory;
 import org.example.dao.custom.EmployeeDAO;
 import org.example.dto.EmployeeDTO;
+import org.example.entity.Employee;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class EmployeeBOImpl implements EmployeeBO {
@@ -17,7 +20,12 @@ public class EmployeeBOImpl implements EmployeeBO {
 
     @Override
     public List<EmployeeDTO> getAll() throws SQLException, ClassNotFoundException {
-        return employeeDAO.getAll();
+        ArrayList<EmployeeDTO> employeeDTOS = new ArrayList<>();
+        List<Employee> employees = employeeDAO.getAll();
+        for (Employee employee : employees) {
+            employeeDTOS.add(new EmployeeDTO(employee.getEmployeeId(), employee.getName(), employee.getRole(), employee.getContact()));
+        }
+        return employeeDTOS;
     }
 
     @Override

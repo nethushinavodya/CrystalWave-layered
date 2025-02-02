@@ -10,7 +10,7 @@ import java.util.List;
 public interface EmployeeDAO extends CrudDAO<Employee> {
     String getCurrentEmployeeId() throws SQLException, ClassNotFoundException;
 
-    List<EmployeeDTO> getAll() throws SQLException, ClassNotFoundException;
+    List<Employee> getAll() throws SQLException, ClassNotFoundException;
 
     boolean update(Employee employee) throws SQLException, ClassNotFoundException;
 

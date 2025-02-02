@@ -13,4 +13,6 @@ public interface DiscountDAO extends CrudDAO<Discount> {
     boolean delete(String id) throws SQLException, ClassNotFoundException;
 
     boolean save(Discount discount) throws SQLException, ClassNotFoundException;
+
+    List<String> getDiscount() throws SQLException, ClassNotFoundException;
 }

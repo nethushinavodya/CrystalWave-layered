@@ -30,4 +30,14 @@ public class DiscountDAOImpl implements DiscountDAO {
     public boolean save(Discount discount) throws SQLException, ClassNotFoundException {
         return SQLUtil.execute("INSERT INTO Discount VALUES (?,?,?,?,?)",discount.getDiscountId(),discount.getDiscountType(),discount.getDiscountStartDate(),discount.getDiscountEndDate(),discount.getDiscountCondition());
     }
+
+    @Override
+    public List<String> getDiscount() throws SQLException, ClassNotFoundException {
+        ResultSet rst = SQLUtil.execute("SELECT Discount_Id FROM Discount ");
+        List<String> discount = new ArrayList<>();
+        while (rst.next()){
+            discount.add(rst.getString(1));
+        }
+        return discount;
+    }
 }

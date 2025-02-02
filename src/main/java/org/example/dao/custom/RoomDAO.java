@@ -11,7 +11,7 @@ import java.util.List;
 public interface RoomDAO extends CrudDAO<AddRoom> {
     String getCurrentRoomId() throws SQLException, ClassNotFoundException;
 
-    List<AddRoomDTO> getAll() throws SQLException, ClassNotFoundException;
+    List<AddRoom> getAll() throws SQLException, ClassNotFoundException;
 
     boolean delete(String i) throws SQLException, ClassNotFoundException;
 
@@ -20,4 +20,10 @@ public interface RoomDAO extends CrudDAO<AddRoom> {
     boolean update(AddRoomDTO addRoomDTO) throws SQLException, ClassNotFoundException;
 
     boolean isAdd(AddItemDTO addItemDTO) throws SQLException, ClassNotFoundException;
+
+    List<String> getDeactiveRooms() throws SQLException, ClassNotFoundException;
+
+    boolean checkOut(String roomId) throws SQLException, ClassNotFoundException;
+
+    List<String> getActiveRoom()throws SQLException, ClassNotFoundException;
 }

@@ -46,4 +46,13 @@ public class RoomTypeDAOImpl implements RoomTypeDAO {
     public boolean update(RoomType roomType) throws SQLException, ClassNotFoundException {
         return SQLUtil.execute("Update Room_Type set RoomType = ?,Description = ?,Rate = ? where RoomType_Id = ?",roomType.getRoomTypeName(),roomType.getRoomTypeDescription(),roomType.getRoomTypePrice(),roomType.getRoomTypeId());
     }
+
+    @Override
+    public String getPrice(String type) throws SQLException, ClassNotFoundException {
+        ResultSet rst = SQLUtil.execute("SELECT Rate FROM Room_Type WHERE RoomType_Id = ?",type);
+        if (rst.next()){
+            return rst.getString(1);
+        }
+        return null;
+    }
 }

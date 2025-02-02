@@ -10,7 +10,7 @@ public class BOFactory {
         return boFactory==null?boFactory=new BOFactory():boFactory;
     }
     public enum BOType {
-        ROOMTYPE,LOGIN, INVENTORY, EMPLOYEE, DISCOUNT, CHECKINDETAIL, ROOM
+        ROOMTYPE,LOGIN, INVENTORY, EMPLOYEE, DISCOUNT, CHECKINDETAIL, GUEST, ROOM,BILL, RESERVATION, SERVICE
     }
     public SuperBO getBO(BOType type) {
         switch (type) {
@@ -28,6 +28,14 @@ public class BOFactory {
                 return new DiscountBOImpl();
             case CHECKINDETAIL:
                 return new CheckInDetailBOImpl();
+            case GUEST:
+                return new GuestBOImpl();
+            case BILL:
+                return new BillBOImpl();
+            case SERVICE:
+                return new ServiceBOImpl();
+            case RESERVATION:
+                return new ReservationBOImpl();
             default:
                 return null;
         }

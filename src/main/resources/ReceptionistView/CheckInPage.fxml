@@ -18,7 +18,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="checkInContent" prefHeight="664.0" prefWidth="974.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.gdse.hotelmanagement.crystalwave.controller.ReceptionistControllers.CheckInController">
+<AnchorPane fx:id="checkInContent" prefHeight="664.0" prefWidth="974.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controller.ReceptionistControllers.CheckInController">
     <Pane layoutX="17.0" layoutY="54.0" prefHeight="594.0" prefWidth="940.0" style="-fx-background-color: rgba(42, 46, 55, 0.9); -fx-background-radius: 30;">
         <children>
             <Button fx:id="reservebtn" layoutX="742.0" layoutY="534.0" onAction="#handleReserve" prefHeight="36.0" prefWidth="151.0" style="-fx-font-size: 16px; -fx-background-color: #57D95C; -fx-text-fill: white; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #333333; -fx-border-width: 3; -fx-font-weight: bold;" text="Reserve">

@@ -4,6 +4,7 @@ import org.example.dao.SQLUtil;
 import org.example.dao.custom.RoomDAO;
 import org.example.dto.AddItemDTO;
 import org.example.dto.AddRoomDTO;
+import org.example.entity.AddRoom;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -19,18 +20,13 @@ public class RoomDAOImpl implements RoomDAO {
         return null;
     }
 
-    public List<AddRoomDTO> getAll() throws SQLException, ClassNotFoundException {
+    public List<AddRoom> getAll() throws SQLException, ClassNotFoundException {
         ResultSet rst = SQLUtil.execute("SELECT * FROM Room");
-        List<AddRoomDTO> addRoomDTOS = new ArrayList<>();
-        try {
-            while (rst.next()) {
-                AddRoomDTO addRoomDTO = new AddRoomDTO(rst.getString(1), rst.getString(2), rst.getString(3), rst.getString(4));
-                addRoomDTOS.add(addRoomDTO);
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
+        List<AddRoom> addRoom = new ArrayList<>();
+        while (rst.next()) {
+            addRoom.add(new AddRoom(rst.getString(1), rst.getString(2), rst.getString(3), rst.getString(4)));
         }
-        return addRoomDTOS;
+        return addRoom;
     }
 
     public boolean delete(String i) throws SQLException, ClassNotFoundException {
@@ -52,5 +48,30 @@ public class RoomDAOImpl implements RoomDAO {
         return SQLUtil.execute("INSERT INTO Room_Inventory VALUES (?,?)",
                 addItemDTO.getRoomId(),
                 addItemDTO.getInventoryId());
+    }
+
+    @Override
+    public List<String> getDeactiveRooms() throws SQLException, ClassNotFoundException {
+        ResultSet rst = SQLUtil.execute("SELECT Room_Id FROM Room WHERE RoomStatus = 'Occupied'");
+        List<String> roomIds = new ArrayList<>();
+        while (rst.next()) {
+            roomIds.add(rst.getString(1));
+        }
+        return roomIds;
+    }
+
+    @Override
+    public boolean checkOut(String roomId) throws SQLException, ClassNotFoundException {
+        return SQLUtil.execute("UPDATE Room SET RoomStatus = 'Available' WHERE Room_Id = ?", roomId);
+    }
+
+    @Override
+    public List<String> getActiveRoom() throws SQLException, ClassNotFoundException {
+        ResultSet rst = SQLUtil.execute("SELECT Room_Id FROM Room WHERE RoomStatus = 'Available' ");
+        List<String> roomIds = new ArrayList<>();
+        while (rst.next()) {
+            roomIds.add(rst.getString(1));
+        }
+        return roomIds;
     }
 }

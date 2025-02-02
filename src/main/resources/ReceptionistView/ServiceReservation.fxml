@@ -13,7 +13,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="664.0" prefWidth="974.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.gdse.hotelmanagement.crystalwave.controller.ReceptionistControllers.ServiceReservationController">
+<AnchorPane prefHeight="664.0" prefWidth="974.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controller.ReceptionistControllers.ServiceReservationController">
     <Pane layoutX="17.0" layoutY="56.0" prefHeight="594.0" prefWidth="940.0" style="-fx-background-color: rgba(42, 46, 55, 0.9); -fx-background-radius: 30;">
         <children>
             <Button layoutX="450.0" layoutY="141.0" mnemonicParsing="false" onAction="#addToCart" prefHeight="30.0" prefWidth="162.0" style="-fx-border-color: #57D95C; -fx-background-color: #333333; -fx-background-radius: 30; -fx-border-radius: 30; -fx-border-width: 3; -fx-font-weight: bold;" text="Add To Cart" textFill="WHITE" />

@@ -42,4 +42,9 @@ public class RoomTypeBOImpl implements RoomTypeBO {
     public boolean update(RoomTypeDTO roomTypeDTO) throws SQLException, ClassNotFoundException {
         return roomTypeDAO.update(new RoomType(roomTypeDTO.getRoomTypeId(),roomTypeDTO.getRoomTypeName(),roomTypeDTO.getRoomTypeDescription(),roomTypeDTO.getRoomTypePrice()));
     }
+
+    @Override
+    public String getPrice(String type) throws SQLException, ClassNotFoundException {
+        return roomTypeDAO.getPrice(type);
+    }
 }

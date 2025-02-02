@@ -16,4 +16,6 @@ public interface RoomTypeDAO extends CrudDAO<RoomType>{
     boolean save(RoomType roomType) throws SQLException, ClassNotFoundException;
 
     boolean update(RoomType roomType) throws SQLException, ClassNotFoundException;
+
+    String getPrice(String type) throws SQLException, ClassNotFoundException;
 }

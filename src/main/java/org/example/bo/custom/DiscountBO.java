@@ -13,4 +13,8 @@ public interface DiscountBO extends SuperBO {
     boolean delete(String id) throws SQLException, ClassNotFoundException;
 
     boolean save(DiscountDTO discountDTO) throws SQLException, ClassNotFoundException;
+
+    List<String> getDiscount() throws SQLException, ClassNotFoundException;
+
+     search( );
 }

@@ -33,4 +33,9 @@ public class DiscountBOImpl implements DiscountBO {
     public boolean save(DiscountDTO discountDTO) throws SQLException, ClassNotFoundException {
         return discountDAO.save(new Discount(discountDTO.getDiscountId(),discountDTO.getDiscountType(),discountDTO.getDiscountStartDate(),discountDTO.getDiscountEndDate(),discountDTO.getDiscountCondition()));
     }
+
+    @Override
+    public List<String> getDiscount() throws SQLException, ClassNotFoundException {
+        return discountDAO.getDiscount();
+    }
 }

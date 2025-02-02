@@ -5,8 +5,10 @@ import org.example.dao.DAOFactory;
 import org.example.dao.custom.RoomDAO;
 import org.example.dto.AddItemDTO;
 import org.example.dto.AddRoomDTO;
+import org.example.entity.AddRoom;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class RoomBOImpl implements RoomBO {
@@ -18,7 +20,12 @@ public class RoomBOImpl implements RoomBO {
 
     @Override
     public List<AddRoomDTO> getAll() throws SQLException, ClassNotFoundException {
-        return roomDAO.getAll();
+        ArrayList<AddRoomDTO> addRoomDTOS = new ArrayList<>();
+        List<AddRoom> addRooms = roomDAO.getAll();
+        for (AddRoom addRoom : addRooms) {
+            addRoomDTOS.add(new AddRoomDTO(addRoom.getRoomId(), addRoom.getRoomNumber(), addRoom.getRoomStatus(), addRoom.getRoomTypeId()));
+        }
+        return addRoomDTOS;
     }
 
     @Override
@@ -39,5 +46,20 @@ public class RoomBOImpl implements RoomBO {
     @Override
     public boolean isAdd(AddItemDTO addItemDTO) throws SQLException, ClassNotFoundException {
         return roomDAO.isAdd(addItemDTO);
+    }
+
+    @Override
+    public List<String> getDeactiveRooms() throws SQLException, ClassNotFoundException {
+        return roomDAO.getDeactiveRooms();
+    }
+
+    @Override
+    public boolean checkOut(String roomId) throws SQLException, ClassNotFoundException {
+        return roomDAO.checkOut(roomId);
+    }
+
+    @Override
+    public List<String> getActiveRoom() throws SQLException, ClassNotFoundException {
+        return roomDAO.getActiveRoom();
     }
 }

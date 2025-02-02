@@ -17,4 +17,6 @@ public interface RoomTypeBO extends SuperBO {
     boolean save(RoomTypeDTO roomTypeDTO) throws SQLException, ClassNotFoundException;
 
     boolean update(RoomTypeDTO roomTypeDTO) throws SQLException, ClassNotFoundException;
+
+    String getPrice(String type) throws SQLException, ClassNotFoundException;
 }

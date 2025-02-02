@@ -21,11 +21,11 @@ public class EmployeeDAOImpl implements EmployeeDAO {
     }
 
     @Override
-    public List<EmployeeDTO> getAll() throws SQLException, ClassNotFoundException {
+    public List<Employee> getAll() throws SQLException, ClassNotFoundException {
        ResultSet rst = SQLUtil.execute("SELECT * FROM Employeement");
-       List<EmployeeDTO> employeeDTOS = new ArrayList<>();
+       List<Employee> employeeDTOS = new ArrayList<>();
        while (rst.next()){
-           employeeDTOS.add(new EmployeeDTO(rst.getString(1), rst.getString(2), rst.getString(3), rst.getString(4)));
+           employeeDTOS.add(new Employee(rst.getString(1),rst.getString(2),rst.getString(3),rst.getString(4)));
        }
        return employeeDTOS;
     }
