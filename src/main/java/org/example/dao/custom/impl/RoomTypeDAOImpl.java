@@ -2,6 +2,7 @@ package org.example.dao.custom.impl;
 
 import org.example.dao.SQLUtil;
 import org.example.dao.custom.RoomTypeDAO;
+import org.example.entity.AddGuest;
 import org.example.entity.RoomType;
 
 import java.sql.ResultSet;
@@ -35,6 +36,11 @@ public class RoomTypeDAOImpl implements RoomTypeDAO {
     @Override
     public boolean delete(String roomNumber) throws SQLException, ClassNotFoundException {
         return SQLUtil.execute("DELETE FROM Room_Type WHERE RoomType_Id = ?",roomNumber);
+    }
+
+    @Override
+    public AddGuest search(String Id) throws SQLException, ClassNotFoundException {
+        return null;
     }
 
     @Override

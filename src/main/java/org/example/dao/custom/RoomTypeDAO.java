@@ -9,13 +9,13 @@ import java.util.ArrayList;
 public interface RoomTypeDAO extends CrudDAO<RoomType>{
     String getCurrentTypeId() throws SQLException, ClassNotFoundException;
 
-    ArrayList<RoomType> getAll() throws SQLException, ClassNotFoundException;
+   /* ArrayList<RoomType> getAll() throws SQLException, ClassNotFoundException;
 
     boolean delete(String roomNumber) throws SQLException, ClassNotFoundException;
 
     boolean save(RoomType roomType) throws SQLException, ClassNotFoundException;
 
     boolean update(RoomType roomType) throws SQLException, ClassNotFoundException;
-
+*/
     String getPrice(String type) throws SQLException, ClassNotFoundException;
 }

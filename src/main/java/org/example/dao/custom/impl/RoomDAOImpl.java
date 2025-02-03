@@ -4,6 +4,7 @@ import org.example.dao.SQLUtil;
 import org.example.dao.custom.RoomDAO;
 import org.example.dto.AddItemDTO;
 import org.example.dto.AddRoomDTO;
+import org.example.entity.AddGuest;
 import org.example.entity.AddRoom;
 
 import java.sql.ResultSet;
@@ -29,17 +30,23 @@ public class RoomDAOImpl implements RoomDAO {
         return addRoom;
     }
 
+
     public boolean delete(String i) throws SQLException, ClassNotFoundException {
         return SQLUtil.execute("DELETE FROM Room WHERE Room_Id = ?", i);
 
     }
 
-    public boolean save(AddRoomDTO addRoomDTO) throws SQLException, ClassNotFoundException {
+    @Override
+    public AddGuest search(String Id) throws SQLException, ClassNotFoundException {
+        return null;
+    }
+
+    public boolean save(AddRoom addRoomDTO) throws SQLException, ClassNotFoundException {
         return SQLUtil.execute("INSERT INTO Room VALUES (?,?,?,?)", addRoomDTO.getRoomId(), addRoomDTO.getRoomNumber(), addRoomDTO.getRoomStatus(), addRoomDTO.getRoomTypeId());
     }
 
     @Override
-    public boolean update(AddRoomDTO addRoomDTO) throws SQLException, ClassNotFoundException {
+    public boolean update(AddRoom addRoomDTO) throws SQLException, ClassNotFoundException {
         return SQLUtil.execute("UPDATE Room SET RoomNumber = ?, RoomStatus = ?, RoomType_Id = ? WHERE Room_Id = ?", addRoomDTO.getRoomNumber(), addRoomDTO.getRoomStatus(), addRoomDTO.getRoomTypeId(), addRoomDTO.getRoomId());
     }
 
@@ -73,5 +80,10 @@ public class RoomDAOImpl implements RoomDAO {
             roomIds.add(rst.getString(1));
         }
         return roomIds;
+    }
+
+    @Override
+    public boolean updateAvailable(String roomId) throws SQLException, ClassNotFoundException {
+        return SQLUtil.execute("UPDATE Room set RoomStatus = 'Occupied' where Room_Id = ?", roomId);
     }
 }

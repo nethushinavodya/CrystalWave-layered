@@ -8,11 +8,13 @@ import java.sql.SQLException;
 import java.util.List;
 
 public interface DiscountDAO extends CrudDAO<Discount> {
-    List<Discount> getAll() throws SQLException, ClassNotFoundException;
+    /*List<Discount> getAll() throws SQLException, ClassNotFoundException;
 
     boolean delete(String id) throws SQLException, ClassNotFoundException;
 
     boolean save(Discount discount) throws SQLException, ClassNotFoundException;
-
+*/
     List<String> getDiscount() throws SQLException, ClassNotFoundException;
+
+    int search(int discount) throws SQLException, ClassNotFoundException;
 }

@@ -34,13 +34,13 @@ public class RoomBOImpl implements RoomBO {
     }
 
     @Override
-    public boolean save(AddRoomDTO addRoomDTO) throws SQLException, ClassNotFoundException {
-        return roomDAO.save(addRoomDTO);
+    public boolean save(AddRoomDTO e) throws SQLException, ClassNotFoundException {
+        return roomDAO.save(new AddRoom(e.getRoomId(), e.getRoomNumber(), e.getRoomStatus(), e.getRoomTypeId()));
     }
 
     @Override
-    public boolean update(AddRoomDTO addRoomDTO) throws SQLException, ClassNotFoundException {
-        return roomDAO.update(addRoomDTO);
+    public boolean update(AddRoomDTO e) throws SQLException, ClassNotFoundException {
+        return roomDAO.update(new AddRoom(e.getRoomId(), e.getRoomNumber(), e.getRoomStatus(), e.getRoomTypeId()));
     }
 
     @Override

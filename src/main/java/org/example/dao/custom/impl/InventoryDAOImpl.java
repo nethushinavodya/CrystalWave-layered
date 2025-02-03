@@ -2,6 +2,7 @@ package org.example.dao.custom.impl;
 
 import org.example.dao.SQLUtil;
 import org.example.dao.custom.InventoryDAO;
+import org.example.entity.AddGuest;
 import org.example.entity.Inventory;
 
 import java.sql.ResultSet;
@@ -35,6 +36,11 @@ public class InventoryDAOImpl implements InventoryDAO {
     @Override
     public boolean delete(String itemId) throws SQLException, ClassNotFoundException {
         return SQLUtil.execute("DELETE FROM Inventory WHERE Inventory_Id = ?", itemId);
+    }
+
+    @Override
+    public AddGuest search(String Id) throws SQLException, ClassNotFoundException {
+        return null;
     }
 
     @Override

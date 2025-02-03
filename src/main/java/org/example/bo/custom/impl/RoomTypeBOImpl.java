@@ -20,7 +20,7 @@ public class RoomTypeBOImpl implements RoomTypeBO {
 
     @Override
     public List<RoomTypeTm> getAll() throws SQLException, ClassNotFoundException {
-        ArrayList<RoomType> roomTypes = roomTypeDAO.getAll();
+        List<RoomType> roomTypes = roomTypeDAO.getAll();
         List<RoomTypeTm> roomTypeTms = new ArrayList<>();
         for(RoomType roomType : roomTypes){
             roomTypeTms.add(new RoomTypeTm(roomType.getRoomTypeId(),roomType.getRoomTypeName(),roomType.getRoomTypeDescription(),String.valueOf(roomType.getRoomTypePrice())));

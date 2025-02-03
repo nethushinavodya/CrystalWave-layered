@@ -2,6 +2,7 @@ package org.example.dao.custom.impl;
 
 import org.example.dao.SQLUtil;
 import org.example.dao.custom.CheckInDetailDAO;
+import org.example.entity.AddGuest;
 import org.example.entity.CheckInDetail;
 
 import java.sql.ResultSet;
@@ -38,5 +39,25 @@ public class CheckInDetailDAOImpl implements CheckInDetailDAO {
             e.printStackTrace();
         }
         return checkInDetails;
+    }
+
+    @Override
+    public boolean save(CheckInDetail entity) throws SQLException, ClassNotFoundException {
+        return false;
+    }
+
+    @Override
+    public boolean update(CheckInDetail entity) throws SQLException, ClassNotFoundException {
+        return false;
+    }
+
+    @Override
+    public boolean delete(String id) throws SQLException, ClassNotFoundException {
+        return false;
+    }
+
+    @Override
+    public AddGuest search(String Id) throws SQLException, ClassNotFoundException {
+        return null;
     }
 }

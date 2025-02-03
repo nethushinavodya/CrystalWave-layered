@@ -21,7 +21,7 @@ public class InventoryBOImpl implements InventoryBO {
 
     @Override
     public List<InventoryTm> getAll() throws SQLException, ClassNotFoundException {
-        ArrayList<Inventory> inventories = inventoryDAO.getAll();
+        List<Inventory> inventories = inventoryDAO.getAll();
         List<InventoryTm> inventoryTms = new ArrayList<>();
         for (Inventory inventory : inventories) {
             inventoryTms.add(new InventoryTm(inventory.getItemId(), inventory.getItemName(), inventory.getItemQuantity(), inventory.getItemPrice()));

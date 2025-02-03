@@ -9,6 +9,7 @@ import java.util.List;
 
 public interface EmployeeDAO extends CrudDAO<Employee> {
     String getCurrentEmployeeId() throws SQLException, ClassNotFoundException;
+/*
 
     List<Employee> getAll() throws SQLException, ClassNotFoundException;
 
@@ -17,6 +18,7 @@ public interface EmployeeDAO extends CrudDAO<Employee> {
     boolean delete(String eId) throws SQLException, ClassNotFoundException;
 
     boolean save(Employee employee) throws SQLException, ClassNotFoundException;
+*/
 
-    EmployeeDTO search(String contact) throws SQLException, ClassNotFoundException;
+    EmployeeDTO search1(String contact) throws SQLException, ClassNotFoundException;
 }

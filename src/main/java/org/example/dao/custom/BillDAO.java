@@ -9,5 +9,6 @@ import java.sql.SQLException;
 public interface BillDAO extends CrudDAO<AddBill> {
     String getCurrentId() throws SQLException, ClassNotFoundException;
 
+
     boolean save(AddBilDto addBilDto) throws SQLException, ClassNotFoundException;
 }

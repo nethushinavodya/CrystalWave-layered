@@ -38,4 +38,9 @@ public class DiscountBOImpl implements DiscountBO {
     public List<String> getDiscount() throws SQLException, ClassNotFoundException {
         return discountDAO.getDiscount();
     }
+
+    @Override
+    public int search(int discount) throws SQLException, ClassNotFoundException {
+        return discountDAO.search(discount);
+    }
 }

@@ -16,5 +16,5 @@ public interface DiscountBO extends SuperBO {
 
     List<String> getDiscount() throws SQLException, ClassNotFoundException;
 
-     search( );
+    int search(int discount) throws SQLException, ClassNotFoundException;
 }

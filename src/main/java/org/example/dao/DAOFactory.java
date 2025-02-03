@@ -10,7 +10,7 @@ public class DAOFactory {
         return daoFactory==null?daoFactory=new DAOFactory():daoFactory;
     }
     public enum DAOType {
-        ROOM, ROOMTYPE, LOGIN, EMPLOYEE, DISCOUNT, CHECKINDETAIL, GUEST, INVENTORY, SERVICE, RESERVATION, BILL
+        ROOM, ROOMTYPE, LOGIN, EMPLOYEE, DISCOUNT, CHECKINDETAIL, GUEST, INVENTORY, SERVICE, RESERVATION, PAYMENT, BILL
     }
     public SuperDAO getDAO(DAOType type) {
         switch (type) {
@@ -36,6 +36,8 @@ public class DAOFactory {
                 return new ServiceDAOImpl();
             case RESERVATION:
                 return new ReservationDAOImpl();
+            case PAYMENT:
+                return new PaymentDAOImpl();
             default:
                 return null;
         }
