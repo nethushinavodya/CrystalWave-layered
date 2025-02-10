@@ -5,13 +5,16 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import org.example.bo.BOFactory;
 import org.example.bo.custom.*;
 import org.example.dao.DAOFactory;
@@ -380,6 +383,22 @@ public class CheckInController {
             return true;
         }else {
             return false;
+        }
+    }
+    public void backOnAction(ActionEvent actionEvent) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/ReceptionistView/ReceptionistDashboard.fxml"));
+            Parent root = loader.load();
+
+            Stage currentStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            currentStage.close();
+
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }

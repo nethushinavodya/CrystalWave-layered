@@ -249,12 +249,12 @@
     <Line endX="128.46665954589844" layoutX="125.0" layoutY="106.0" startX="-110.00001525878906" strokeWidth="3.0" />
     <ImageView fitHeight="47.0" fitWidth="57.0" layoutX="21.0" layoutY="163.0">
         <image>
-            <Image url="@../Images/home%20(2).png" />
+            <Image url="@../Images/home (2).png" />
         </image>
     </ImageView>
     <ImageView fitHeight="80.0" fitWidth="47.0" layoutX="25.0" layoutY="262.0" pickOnBounds="true" preserveRatio="true">
         <image>
-            <Image url="@../Images/voters%20(1).png" />
+            <Image url="@../Images/voters (1).png" />
         </image>
     </ImageView>
     <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="26.0" layoutY="343.0">
