@@ -54,7 +54,7 @@
             <Font name="System Bold" size="16.0" />
         </font>
     </Label>
-    <Button layoutX="867.0" layoutY="16.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="74.0" style="-fx-background-color: #122E4B; -fx-background-radius: 10;" text="Back" textFill="WHITE">
+    <Button layoutX="874.0" layoutY="15.0" mnemonicParsing="false" onAction="#backOnAction" prefHeight="26.0" prefWidth="74.0" style="-fx-background-color: #122E4B; -fx-background-radius: 10;" text="Back" textFill="WHITE">
         <font>
             <Font name="System Bold" size="12.0" />
         </font>
