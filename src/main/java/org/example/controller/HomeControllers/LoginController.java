@@ -66,16 +66,7 @@ public class LoginController {
             }
         }
     }
-    public boolean isValid(){
-        if(
-                emailField.getText().matches("^[\\w!#$%&'*+/=?{|}~^-]+(?:\\.[\\w!#$%&'*+/=?{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$")&&
-                passwordField.getText() != null
-        ){
-            return true;
-        }else {
-            return false;
-        }
-    }
+
     private boolean validateUserCredentials(String email, String password) throws SQLException, ClassNotFoundException {
         userDTO = loginBO.getUserByEmailAndRole(email);
         System.out.println(userDTO.getPassword() + " " + userDTO.getPassword());
@@ -186,9 +177,18 @@ public class LoginController {
 
     public void emailOnKeyRelease(KeyEvent keyEvent) {
         if(emailField.getText().matches("^[\\w!#$%&'*+/=?{|}~^-]+(?:\\.[\\w!#$%&'*+/=?{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$")) {
-            emailField.setStyle("-fx-border-color: green; -fx-border-width: 2px; -fx-border-radius: 5px;");
+            emailField.setStyle("-fx-border-color: green; -fx-border-width: 2px; -fx-border-radius: 6px; ");
         }else{
-            emailField.setStyle("-fx-border-color: red; -fx-border-width: 2px; -fx-border-radius: 5px;");
+            emailField.setStyle("-fx-border-color: red; -fx-border-width: 2px; -fx-border-radius: 6px; ");
+        }
+    }
+
+    public void passwordOnKeyRelease(KeyEvent keyEvent) {
+        if(passwordField.getText().matches("^(.*\\d){3,}.*$")) {
+            passwordField.setStyle("-fx-border-color: green; -fx-border-width: 2px; -fx-border-radius: 6px;");
+        }else{
+            passwordField.setStyle("-fx-border-color: red; -fx-border-width: 2px; -fx-border-radius: 6px;");
+
         }
     }
 }
