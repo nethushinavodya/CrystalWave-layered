@@ -3,10 +3,15 @@ package org.example.controller.AdminControllers;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 import org.example.bo.BOFactory;
 import org.example.bo.custom.EmployeeBO;
 import org.example.bo.custom.ServiceBO;
@@ -15,6 +20,8 @@ import org.example.dto.AddServiceEmployeeDTO;
 import org.example.dto.EmployeeDTO;
 import org.example.dto.tm.AddServiceTM;
 import com.example.layeredarchitecture.db.DBConnection;
+
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
@@ -287,6 +294,22 @@ public class AddServiceController {
         }else {
             System.out.println("ffff");
             return false;
+        }
+    }
+    public void backOnAction(ActionEvent actionEvent) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/AdminView/AdminDashboard.fxml"));
+            Parent root = loader.load();
+
+            Stage currentStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            currentStage.close();
+
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }

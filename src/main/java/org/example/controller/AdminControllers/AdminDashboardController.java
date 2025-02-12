@@ -89,6 +89,4 @@ public class AdminDashboardController {
         alert.setContentText(content);
         alert.showAndWait();
     }
-
-
 }
